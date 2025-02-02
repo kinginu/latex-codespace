@@ -1,0 +1,6 @@
+services:
+  islandoftex:
+    image: registry.gitlab.com/islandoftex/images/texlive:latest
+    tty: true
+    environment:
+      SHELL: "/bin/bash"

@@ -1,0 +1,57 @@
+{
+  // check here for more information: https://github.com/James-Yu/LaTeX-Workshop/wiki/View#latex-workshopviewpdftabeditorgroup
+  "latex-workshop.latex.tools": [
+    {
+      "name": "uplatex",
+      "command": "uplatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-output-directory=output",
+        "-shell-escape"
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "dvipdfmx",
+      "command": "dvipdfmx",
+      "args": [
+        "-E",
+        "-o",
+        "output/%DOCFILE%.pdf",
+        "output/%DOCFILE%.dvi"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "uplatex -> dvipdfmx",
+      "tools": ["uplatex", "uplatex", "dvipdfmx"]
+    }
+  ],
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.fileTypes": [
+  "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out",
+  "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist",
+  "*.fls", "*.log", "*.fdb_latexmk", "_minted*", "*.nav",
+  "*.snm", "*.vrb"
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.outDir": "output/",
+  "latex-workshop.synctex.path": "output/",
+  "latex-workshop.view.pdf.viewer": "tab", // PDFをエディタの隣のタブで開く
+  "latex-workshop.view.pdf.tab.editorGroup": "right", // タブをエディタの右側に表示
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "[latex]": {
+    // 行の折り返し
+    "editor.wordWrap": "bounded",
+    // 行の折り返し幅
+    "editor.wordWrapColumn": 80,
+    // 単語区切りの設定
+    "editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
+    // 縦線の表示
+    // "editor.rulers": [40, 80, 120, 160, 200],
+  },
+}

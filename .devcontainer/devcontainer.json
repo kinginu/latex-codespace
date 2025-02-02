@@ -1,0 +1,22 @@
+{
+  "name": "TeX Live Full",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "islandoftex",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "tlmgr update --self --all",
+  "customizations": {
+    "vscode": {
+      "settings": {
+                "extensions.verifySignature": false
+              },
+      "extensions": [
+        "james-yu.latex-workshop",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "GitHub.vscode-pull-request-github",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ]
+    }
+  }
+}
